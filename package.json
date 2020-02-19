@@ -1,0 +1,29 @@
+{
+  "name": "closest-property",
+  "version": "0.0.0",
+  "description": "",
+  "main": "lib/main.js",
+  "scripts": {
+    "build": "webpack --mode production",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chrismilson/closest-property.git"
+  },
+  "keywords": [
+    "closest",
+    "key",
+    "property",
+    "member",
+    "object"
+  ],
+  "author": "Chris Milson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chrismilson/closest-property/issues"
+  },
+  "homepage": "https://github.com/chrismilson/closest-property#readme",
+  "devDependencies": {
+  }
+}
