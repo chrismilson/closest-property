@@ -10,27 +10,31 @@
  * @param input2
  */
 export const editDistance = (input1 = '', input2 = '') => {
-  const s1 = input1.toLowerCase()
-  const s2 = input2.toLowerCase()
-  const dp: number[] = []
-  for (let i = 0; i <= s1.length; i++) dp.push(i)
+  const s1 = input1.toLowerCase();
+  const s2 = input2.toLowerCase();
+  const dp: number[] = [];
+  for (let i = 0; i <= s1.length; i++) dp.push(i);
 
   for (let j = 0; j < s2.length; j++) {
-    let remember = dp[0]
-    dp[0] = j + 1
+    let remember = dp[0];
+    dp[0] = j + 1;
     for (let i = 0; i < s1.length; i++) {
-      const next = s1[i] === s2[j] ? remember : (1 + Math.min(
-        dp[i], // add a character
-        dp[i + 1], // delete a charcter
-        remember // replace a character
-      ))
-      remember = dp[i + 1]
-      dp[i + 1] = next
+      const next =
+        s1[i] === s2[j]
+          ? remember
+          : 1 +
+            Math.min(
+              dp[i], // add a character
+              dp[i + 1], // delete a charcter
+              remember, // replace a character
+            );
+      remember = dp[i + 1];
+      dp[i + 1] = next;
     }
   }
 
-  return dp[dp.length - 1]
-}
+  return dp[dp.length - 1];
+};
 
 /**
  * When given an object and a target string, returns the [first] value with the
@@ -39,17 +43,17 @@ export const editDistance = (input1 = '', input2 = '') => {
  * @param obj
  * @param target
  */
-export default function closest (obj: any, target: string) {
-  var minDistance = Infinity
-  var minValue
+export default function closest(obj: any, target: string) {
+  let minDistance = Infinity;
+  let minValue;
 
   Object.keys(obj).forEach(key => {
-    const dist = editDistance(key, target)
+    const dist = editDistance(key, target);
     if (dist < minDistance) {
-      minDistance = dist
-      minValue = obj[key]
+      minDistance = dist;
+      minValue = obj[key];
     }
-  })
+  });
 
-  return minValue
+  return minValue;
 }
