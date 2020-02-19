@@ -15,14 +15,14 @@ npm install closest-property --save
 ## Examples
 
 ```js
-const obj = {
+const things = {
   house: 'this is a house',
   car: 'this is a car',
   dog: 'this is a dog'
 }
 
-console.log(closest(obj, 'cat')) // this is a car
-console.log(closest(obj, 'horse')) // this is a house
+console.log(closest(things, 'cat')) // this is a car
+console.log(closest(things, 'horse')) // this is a house
 ```
 
 or 
