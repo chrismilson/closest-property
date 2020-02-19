@@ -2,7 +2,8 @@
   "name": "closest-property",
   "version": "0.0.0",
   "description": "",
-  "main": "lib/main.js",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "files": [
     "lib/**/*"
   ],
